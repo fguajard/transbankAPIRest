@@ -17,8 +17,16 @@
   </head>
   <body>
     
-    <h1>Contenido Aqui</h1>
+    <form
+    action="https://webpay3gint.transbank.cl/webpayserver/initTransaction"
+    method="POST"
+  >
+    <input type="text" name="token_ws" />
+    <button>pagar</button>
+  </form>
 
+  <!-- Axios -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!-- Bootsrap -->
 
     <script
