@@ -17,27 +17,40 @@
   </head>
   <body>
     
-    <div class="container">
-      <h3 class="p-3" >Ingrese un nuevo Producto</h3>
-      <form class="p-4">      
-        <div class="form-group">
-          <label for="producto">Producto</label>
-          <input type="text" class="form-control" id="producto" placeholder="">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-sm-6">
+        <div class="container">
+          <h2 class="p-3">Productos</h2>
+          <div class="row row-cols-3" id="listaProductos">        
+          </div>
         </div>
-        <div class="form-group">
-          <label for="precio">Precio</label>
-          <input type="text" class="form-control" id="precio" placeholder="">
+      </div>
+      <div class="col-12 col-sm-6">
+        <h2 class="p-3">Carrito de Compra</h2>
+        <ul id="listaEnCarrito">
+          
+        </ul>
+        <div class="d-inline-block">          
+          <h4 class="d-inline-block">Total a Pagar : </h4>
+          <h2 class="d-inline-block" id="totalPago">$ 0</h2>
         </div>
-        <div class="form-group">
-          <label for="stock">Stock</label>
-          <input type="text" class="form-control" id="stock" placeholder="">
-        </div>
-        <button class="btn btn-primary" >Registrar</button>
-      </form>
-  
-      <button type="button" class="btn btn-primary btn-lg btn-block" onclick="location.href='/carrito'" >Ir a Tienda</button>
 
+        <button type="button" class="btn btn-primary btn-lg btn-block" id="botonpagar" disabled >Pagar</button>
+
+      <form 
+        id="formPagar"
+        class="d-hidden"
+        action="https://webpay3gint.transbank.cl/webpayserver/initTransaction"
+        method="POST"
+      >
+        <input type="hidden" name="token_ws" />
+        
+      </form>
+        
+      </div>
     </div>
+  </div>
 
   <!-- Axios -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -59,6 +72,6 @@
       crossorigin="anonymous"
     ></script>
 
-    <script src="javascript"></script>
+    <script defer src="javascriptcarrito" type="module"></script>
   </body>
 </html>
